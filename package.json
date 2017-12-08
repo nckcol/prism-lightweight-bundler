@@ -1,5 +1,5 @@
 {
-  "name": "@prism/lightweight-bundler",
+  "name": "@prismdev/lightweight-bundler",
   "version": "0.1.1",
   "description": "Lightweight bundler for landing pages",
   "engines": {
