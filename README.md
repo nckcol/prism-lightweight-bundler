@@ -1,4 +1,4 @@
-# Lightweight bundler <span style="color:#ee0055"> (Early Alpha)</span>
+# Lightweight bundler _(alpha)_
 
 Oriented for better DX while creating landing pages or other small projects
 
@@ -7,6 +7,7 @@ Oriented for better DX while creating landing pages or other small projects
 - [x] Init project script
 - [ ] Development server script
 - [ ] Build server script
+- [ ] Config ESLint and Prettier
 
 ## Getting Started
 
@@ -17,12 +18,17 @@ Let's go:
 1. Init your progect with ``npm init -y`` command.
 1. Install bundler:
     ```sh
-    npm install @prism/lightweight-bundler
+    npm install @prismdev/lightweight-bundler
     ```
 1. Create initial file structure:
     ```sh
     $(npm bin)/lightweight-bundler init
     ```
+    _For Windows:_
+    ```sh
+    .\node_modules\.bin\lightweight-bundler.cmd init
+    ```
+
 1. Start to create awesome things!
     ```sh
     npm start
@@ -64,4 +70,4 @@ Let's go:
 
 _More information will be added here lately._
 
-🚲 for Prism dev team 🕴🏼
+🚲  for Prism dev team 🕴🏼
