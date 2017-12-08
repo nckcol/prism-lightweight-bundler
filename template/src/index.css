@@ -1,0 +1,12 @@
+:root,
+body {
+    padding: 0;
+    margin: 0;
+    font-size: 100%;
+    line-height: 1.4;
+}
+
+h1 {
+    text-align: center;
+    margin: 24px 0;
+}

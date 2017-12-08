@@ -1,0 +1,37 @@
+{
+  "name": "@prism/lightweight-bundler",
+  "version": "0.1.0",
+  "description": "Lightweight bundler for landing pages",
+  "engines": {
+    "node": ">=8.9"
+  },
+  "bin": {
+    "lightweight-bundler": "./bin/lightweight-bundler.js"
+  },
+  "scripts": {},
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/nckcol/prism-lightweight-bundler.git"
+  },
+  "keywords": [
+    "Prism",
+    "bundler",
+    "lightweight",
+    "fast",
+    "slim",
+    "PostCSS",
+    "Webpack",
+    "ES2015"
+  ],
+  "author": "Nikita Popov <n.popov@prismsolutions.ru>",
+  "license": "MIT",
+  "bugs": {
+    "url": "https://github.com/nckcol/prism-lightweight-bundler/issues"
+  },
+  "homepage": "https://github.com/nckcol/prism-lightweight-bundler#readme",
+  "dependencies": {
+    "chalk": "^2.3.0",
+    "cross-spawn": "^5.1.0",
+    "fs-extra": "^4.0.3"
+  }
+}
