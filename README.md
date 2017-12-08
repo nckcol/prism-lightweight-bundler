@@ -1,6 +1,12 @@
-# Lightweight bundler <span style="color:#ee0055">(Alpha)</span>
+# Lightweight bundler <span style="color:#ee0055"> (Early Alpha)</span>
 
 Oriented for better DX while creating landing pages or other small projects
+
+## TODO
+
+- [x] Init project script
+- [ ] Development server script
+- [ ] Build server script
 
 ## Getting Started
 
