@@ -17,10 +17,10 @@ switch (script) {
 }
 
 function runScript(script, args) {
-  const arguments = [require.resolve('../scripts/' + script), ...args]
+  const scriptCommand = [require.resolve('../scripts/' + script), ...args]
   const result = spawn.sync(
     'node', 
-    arguments,
+    scriptCommand,
     { stdio: 'inherit' }
   )
 
