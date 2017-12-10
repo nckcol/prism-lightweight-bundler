@@ -1,13 +1,13 @@
-# Lightweight bundler _(alpha)_
+# Lightweight bundler _(beta)_
 
 Oriented for better DX while creating landing pages or other small projects
 
 ## TODO
 
-- [x] Init project script
-- [ ] Development server script
-- [ ] Build server script
 - [ ] Config ESLint and Prettier
+- [ ] User friendly output for build
+- [ ] Pass html files through HtmlWebpackPlugin
+- [ ] Fix live-reload issue
 
 ## Getting Started
 
