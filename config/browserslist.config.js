@@ -1,0 +1,5 @@
+module.exports = [
+  'last 4 versions',
+  'ie >= 11',
+  '>1%'
+]

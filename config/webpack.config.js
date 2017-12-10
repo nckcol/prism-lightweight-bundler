@@ -38,6 +38,7 @@ const config = {
 const baseConfig = require('./parts/webpack.base')
 const scriptsConfig = require('./parts/webpack.scripts')
 const stylesConfig = require('./parts/webpack.styles')
+const assetsConfig = require('./parts/webpack.assets')
 
 module.exports = merge(
 
@@ -46,5 +47,6 @@ module.exports = merge(
   config,
 
   scriptsConfig(paths),
-  stylesConfig(paths)
+  stylesConfig(paths),
+  assetsConfig(paths)
 )

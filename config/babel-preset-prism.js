@@ -11,12 +11,7 @@ module.exports = function () {
       [
         require.resolve('@babel/preset-env'), {
           targets: {
-            browsers: [
-              'last 2 versions',
-              'safari >= 8',
-              'ie >= 11',
-              '>1%'
-            ]
+            browsers: require('./browserslist.config')
           }
         }
       ]
