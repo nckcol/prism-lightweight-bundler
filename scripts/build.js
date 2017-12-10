@@ -26,7 +26,7 @@ function build (appPath, ownPath) {
       process.exit(1)
     }
     // Done processing
-    console.log('Successfuly builded')
+    console.log(chalk.green('Successfuly bundled!'))
   })
 
 }

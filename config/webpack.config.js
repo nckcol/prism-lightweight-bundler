@@ -16,8 +16,7 @@ const paths = require('./paths')
     minify: false
   }
 ] */
-const host = 'loaclhost'
-const port = '3000'
+const publicPath = ''
 
 const config = {
   entry: {
@@ -31,7 +30,7 @@ const config = {
     
     filename: '[name].js',
     chunkFilename: 'chunks/[name].js',
-    publicPath: '',
+    publicPath,
   }
 }
 
@@ -42,7 +41,7 @@ const assetsConfig = require('./parts/webpack.assets')
 
 module.exports = merge(
 
-  baseConfig(paths, host, port),
+  baseConfig(paths, publicPath),
 
   config,
 

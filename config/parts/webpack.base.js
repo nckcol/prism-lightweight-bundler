@@ -25,7 +25,10 @@ const stats = {
   }
 }
 
-module.exports = function webpackBase (paths, host, port) {
+const host = process.env.HOST || 'localhost'
+const port = process.env.PORT || 3000
+
+module.exports = function webpackBase (paths, publicPath) {
   return {
     resolve: {
       extensions: ['.webpack-loader.js', '.web-loader.js', '.loader.js'],
@@ -72,14 +75,23 @@ module.exports = function webpackBase (paths, host, port) {
     stats,
 
     devServer: {
-      port,
       host,
+      port,
+      publicPath,
       stats,
+
+      https: false,
       
-      contentBase: paths.source,
-      publicPath: paths.public,
+      contentBase: paths.build,
+      watchContentBase: true,
+
       historyApiFallback: true,
-      compress: ifProduction(),
+      compress: true,
+
+      overlay: false,
+      quiet: true,
+      clientLogLevel: 'none',
+
     },
 
     watchOptions: {
