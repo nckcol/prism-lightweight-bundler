@@ -54,7 +54,7 @@ function start (appPath, ownPath) {
   let devServer = new WebpackDevServer(compiler, webpackConfig.devServer)
   const devServerUrl = url.format({
     protocol: webpackConfig.devServer.https ? 'https' : 'http',
-    hostname: webpackConfig.devServer.host,
+    hostname: webpackConfig.devServer.host === '0.0.0.0' ? 'localhost' : webpackConfig.devServer.host,
     port: webpackConfig.devServer.port,
     pathname: '/',
   });

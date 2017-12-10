@@ -6,27 +6,22 @@ const autoprefixer = require('autoprefixer')
 const cssnano = require('cssnano')
 
 module.exports = function(context) {
-  let plugins= []
+  let plugins = []
 
   if(context.options.sugared) {
-    plugins.concat([
-      nested(),
-      cssvariables(),
-      calc(),
-    ])
+    plugins.push(nested())
+    plugins.push(cssvariables())
+    plugins.push(calc())
   }
   
-  plugins.concat([
-    flexbugsfixes(),
-    autoprefixer({
-      browsers: require('./browserslist.config')
-    }),
-  ])
+
+  plugins.push(flexbugsfixes())
+  plugins.push(autoprefixer({
+    browsers: require('./browserslist.config')
+  }))
 
   if(context.env === 'production') {
-    plugins.concat([
-      cssnano()
-    ])
+    plugins.push(cssnano())
   }
 
   return {

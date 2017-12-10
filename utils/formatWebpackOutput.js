@@ -25,7 +25,6 @@ function errorOutput(messages) {
   // of the same problem, but confuse the reader with noise.
   console.log(chalk.red('Failed to compile.\n'))
   console.log(messages[0])
-  console.log('\n\n')
 }
 
 function warningOutput(messages) {

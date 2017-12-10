@@ -25,7 +25,7 @@ const stats = {
   }
 }
 
-const host = process.env.HOST || 'localhost'
+const host = process.env.HOST || '0.0.0.0'
 const port = process.env.PORT || 3000
 
 module.exports = function webpackBase (paths, publicPath) {
@@ -60,6 +60,8 @@ module.exports = function webpackBase (paths, publicPath) {
       // show module names instead of numbers in webpack stats
       ifNotProduction(new webpack.NamedModulesPlugin()),
 
+      // ifNotProduction(new webpack.HotModuleReplacementPlugin()),
+
       // don't spit out any errors in compiled assets
       ifNotProduction(new webpack.NoEmitOnErrorsPlugin()),
     ]),
@@ -82,16 +84,15 @@ module.exports = function webpackBase (paths, publicPath) {
 
       https: false,
       
-      contentBase: paths.build,
-      watchContentBase: true,
+      //contentBase: paths.public,
+      //watchContentBase: true,
 
       historyApiFallback: true,
       compress: true,
 
-      overlay: false,
+      //hot: true,
       quiet: true,
       clientLogLevel: 'none',
-
     },
 
     watchOptions: {
