@@ -9,18 +9,15 @@ const {
 
 const { removeEmpty } = configUtils
 
-const paths = {
-  source: path.join(__dirname, './src'),
-  build: path.join(__dirname, './public'),
-  modules: path.resolve(__dirname, 'node_modules')
-}
-
-const pages = [
+const paths = require('./paths')
+/* const pages = [
   {
     template: './pages/index.html',
     minify: false
   }
-]
+] */
+const host = 'loaclhost'
+const port = '3000'
 
 const config = {
   entry: {
@@ -38,16 +35,16 @@ const config = {
   }
 }
 
-const baseConfig = require('./webpack/base.config')
+const baseConfig = require('./parts/webpack.base')
 const scriptsConfig = require('./parts/webpack.scripts')
 const stylesConfig = require('./parts/webpack.styles')
 
 module.exports = merge(
 
-  baseConfig(host, port, paths),
+  baseConfig(paths, host, port),
 
   config,
 
-  scriptsConfig(),
-  stylesPart()
+  scriptsConfig(paths),
+  stylesConfig(paths)
 )

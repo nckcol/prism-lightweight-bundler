@@ -25,7 +25,7 @@ const stats = {
   }
 }
 
-module.exports = function webpackBase (host, port, paths) {
+module.exports = function webpackBase (paths, host, port) {
   return {
     resolve: {
       extensions: ['.webpack-loader.js', '.web-loader.js', '.loader.js'],
@@ -64,8 +64,8 @@ module.exports = function webpackBase (host, port, paths) {
     devtool: ifProduction(false, 'source-map'),
 
     performance: {
-      maxAssetSize: 800000,
-      maxEntrypointSize: 300000,
+      maxAssetSize: 800 * 1024,
+      maxEntrypointSize: 300 * 1024,
       hints: ifProduction('warning', false)
     },
 

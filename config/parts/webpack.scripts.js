@@ -1,4 +1,4 @@
-module.exports = function () {
+module.exports = function (paths) {
   return {
     resolve: {
       extensions: ['.js'],
@@ -9,7 +9,16 @@ module.exports = function () {
         {
           test: /\.js$/,
           exclude: /node_modules/,
-          use: ['babel-loader']
+          use: [
+            {
+              loader: require.resolve('babel-loader'),
+              options: {
+                babelrc: false,
+                presets: [require.resolve('../babel-preset-prism.js')],
+                compact: true
+              }
+            }
+          ]
         },
       ],
     }

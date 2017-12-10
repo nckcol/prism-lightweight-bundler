@@ -30,8 +30,20 @@
   },
   "homepage": "https://github.com/nckcol/prism-lightweight-bundler#readme",
   "dependencies": {
+    "@babel/core": "^7.0.0-beta.34",
+    "@babel/plugin-proposal-class-properties": "^7.0.0-beta.34",
+    "@babel/plugin-proposal-decorators": "^7.0.0-beta.34",
+    "@babel/plugin-proposal-object-rest-spread": "^7.0.0-beta.34",
+    "@babel/plugin-syntax-dynamic-import": "^7.0.0-beta.34",
+    "@babel/preset-env": "^7.0.0-beta.34",
+    "babel-loader": "^8.0.0-beta.0",
+    "babel-minify-webpack-plugin": "^0.2.0",
     "chalk": "^2.3.0",
+    "copy-webpack-plugin": "^4.2.3",
     "cross-spawn": "^5.1.0",
-    "fs-extra": "^4.0.3"
+    "fs-extra": "^4.0.3",
+    "webpack": "^3.10.0",
+    "webpack-config-utils": "^2.3.0",
+    "webpack-merge": "^4.1.1"
   }
 }

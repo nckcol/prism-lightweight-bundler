@@ -1,11 +1,20 @@
 {
   "plugins": [
-    "syntax-dynamic-import",
-    "transform-decorators-legacy",
-    "transform-class-properties",
-    "transform-object-rest-spread"
+    "@babel/plugin-syntax-dynamic-import",
+    "@babel/plugin-proposal-class-properties",
+    "@babel/plugin-proposal-object-rest-spread",
+    "@babel/plugin-proposal-decorators"
   ],
   "presets": [
-    "env"
+    ["@babel/preset-env", {
+      "targets": {
+        "browsers": [
+          "last 2 versions",
+          "safari >= 7",
+          "ie >= 11"
+        ]
+      }
+    }]
+    
   ]
 }

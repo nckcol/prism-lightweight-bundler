@@ -11,7 +11,7 @@ const chalk = require('chalk')
 const appPath = path.resolve('.')
 const ownPath = path.resolve(path.join(__dirname, '..'))
 
-init(appPath, ownPath);
+build(appPath, ownPath);
 
 function build (appPath, ownPath) {
 
