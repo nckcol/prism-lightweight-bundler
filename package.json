@@ -1,6 +1,6 @@
 {
   "name": "@prismdev/lightweight-bundler",
-  "version": "0.1.3",
+  "version": "1.0.0-beta.0",
   "description": "Lightweight bundler for landing pages",
   "engines": {
     "node": ">=8.9"
