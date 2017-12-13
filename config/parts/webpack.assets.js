@@ -10,13 +10,15 @@ module.exports = function assetsConfig (paths) {
               oneOf: [
                 {
                   use: [
-                    fileLoader('assets/images')
+                    fileLoader('assets/images'),
+                    imageWebpackLoader()
                   ]
                 },
                 {
                   resourceQuery: /inline/,
                   use: [
-                    urlLoader('image/jpeg')
+                    urlLoader('image/jpeg'),
+                    imageWebpackLoader()
                   ]
                 }
               ]
@@ -27,16 +29,25 @@ module.exports = function assetsConfig (paths) {
                 {
                   use: [
                     fileLoader('assets/images'),
-                    
+                    imageWebpackLoader()
                   ]
                 },
                 {
                   resourceQuery: /inline/,
                   use: [
-                    urlLoader('image/png')
+                    urlLoader('image/png'),
+                    imageWebpackLoader()
                   ]
                 }
               ],
+            },
+
+            {
+              test: /\.svg/,
+              use: [
+                fileLoader('assets/icons'),
+                imageWebpackLoader()
+              ]
             },
 
             /* load fonts */
@@ -44,32 +55,6 @@ module.exports = function assetsConfig (paths) {
               test: /\.(woff2?|ttf|otf)$/,
               use: [
                 fileLoader('assets/fonts')
-              ]
-            },
-
-            /* Load icons */
-            {
-              test: /\.svg$/,
-              use: [
-                fileLoader('assets/icons'),
-                {
-                  loader: require.resolve('svgo-loader'),
-                  options: {
-                    plugins: [
-                      {
-                        removeTitle: true
-                      },
-                      {
-                        convertColors: {
-                          shorthex: false
-                        }
-                      },
-                      {
-                        convertPathData: false
-                      }
-                    ]
-                  }
-                }
               ]
             },
 

@@ -47,7 +47,7 @@ function start (appPath, ownPath) {
     if (isInteractive) {
       clearConsole()
     }
-
+    
     formatWebpackOutput(stats)
   });
 
