@@ -42,11 +42,29 @@ module.exports = function assetsConfig (paths) {
               ],
             },
 
+            /* Load icons */
             {
-              test: /\.svg/,
+              test: /\.svg$/,
               use: [
                 fileLoader('assets/icons'),
-                imageWebpackLoader()
+                {
+                  loader: require.resolve('svgo-loader'),
+                  options: {
+                    plugins: [
+                      {
+                        removeTitle: true
+                      },
+                      {
+                        convertColors: {
+                          shorthex: false
+                        }
+                      },
+                      {
+                        convertPathData: false
+                      }
+                    ]
+                  }
+                }
               ]
             },
 
