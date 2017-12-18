@@ -10,15 +10,13 @@ module.exports = function assetsConfig (paths) {
               oneOf: [
                 {
                   use: [
-                    fileLoader('assets/images'),
-                    imageWebpackLoader()
+                    fileLoader('assets/images')
                   ]
                 },
                 {
                   resourceQuery: /inline/,
                   use: [
-                    urlLoader('image/jpeg'),
-                    imageWebpackLoader()
+                    urlLoader('image/jpeg')
                   ]
                 }
               ]
@@ -28,15 +26,13 @@ module.exports = function assetsConfig (paths) {
               oneOf: [
                 {
                   use: [
-                    fileLoader('assets/images'),
-                    imageWebpackLoader()
+                    fileLoader('assets/images')
                   ]
                 },
                 {
                   resourceQuery: /inline/,
                   use: [
-                    urlLoader('image/png'),
-                    imageWebpackLoader()
+                    urlLoader('image/png')
                   ]
                 }
               ],
@@ -93,33 +89,6 @@ module.exports = function assetsConfig (paths) {
       ]
     }
   }
-}
-
-function imageWebpackLoader() {
-  return {
-    loader: require.resolve('image-webpack-loader'),
-    options: {
-      gifsicle: {
-        interlaced: false,
-      },
-      optipng: {
-        optimizationLevel: 7,
-      },
-      pngquant: {
-        quality: '65-90',
-        speed: 4
-      },
-      mozjpeg: {
-        progressive: true,
-        quality: 65
-      },
-      // Specifying webp here will create a WEBP version of your JPG/PNG images
-      webp: {
-        quality: 75
-      }
-    }
-  }
-
 }
 
 function fileLoader(path) {
